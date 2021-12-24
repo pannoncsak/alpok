@@ -1,7 +1,7 @@
 (function (date, time) {
-  date.textContent = new Date().toISOString().substring(0, 10);
-  time.textContent = new Date().toTimeString().split(' ')[0];
+  date.textContent = moment().format('YYYY.MM.DD.');
+  time.textContent = moment().format('HH:mm:ss');
   setInterval(function () {
-    time.textContent = new Date().toTimeString().split(' ')[0];
+    time.textContent = moment().format('HH:mm:ss');
   }, 1000);
 })(document.getElementById('date'), document.getElementById('time'));
